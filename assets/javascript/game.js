@@ -21,11 +21,16 @@ function startGame(){
         console.log(computerChoice);
         if(userChoice === computerChoice){
             winsCount ++
-        }else{
+            userChoicesArr = []
+            guessCount=11
+        }
+
+           
+        guessCount --
+
+        if(guessCount === 0){
             lossCount ++
         }
-        
-        guessCount --
     
         wins.innerHTML="Wins : " + winsCount
         losses.innerHTML="Losses : " + lossCount
@@ -34,7 +39,7 @@ function startGame(){
     
     console.log(userChoicesArr);
     if(guessCount === 0){
-        location.reload()
+        // location.reload()
         reset()
     
     }
@@ -43,11 +48,9 @@ function startGame(){
 }
 startGame()
 
-// function reset(){
-//     userChoicesArr = []
-//     winsCount=0
-//     lossCount=0
-//     guessCount=10
+function reset(){
+    userChoicesArr = []
+    guessCount=10
 
-// }
+}
 
